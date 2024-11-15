@@ -1,38 +1,77 @@
-.App {
-  text-align: center;
+/* General Layout */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Navbar Styling */
+.navbar {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 15px;
+  background-color: #ffcccb; /* Light pink color for menu bar */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.App-link {
-  color: #61dafb;
+.logo-container {
+  display: flex;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.logo {
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.website-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.title {
+  font-size: 24px;
+  color: #333;
+}
+
+/* Link Styling */
+.links {
+  display: flex;
+  gap: 15px;
+}
+
+.link {
+  color: #333;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.link:hover {
+  color: #ff5c8d; /* Slightly darker pink for hover effect */
+}
+
+/* Page Section Styling */
+.home, .signin, .signup, .manage-book {
+  text-align: center;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+/* Status Messages */
+.error {
+  color: red;
+  margin-top: 10px;
+}
+
+.success {
+  color: green;
+  margin-top: 10px;
 }

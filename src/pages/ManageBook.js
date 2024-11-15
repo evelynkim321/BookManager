@@ -5,6 +5,7 @@ import axios from 'axios';
 const ManageBook = () => {
   // State variables for managing form data and book data
   const [books, setBooks] = useState([]);
+  const [showBooks, setShowBooks] = useState(false); // State to control book list display
   const [bookId, setBookId] = useState('');
   const [searchId, setSearchId] = useState('');
   const [editTitle, setEditTitle] = useState('');
@@ -27,6 +28,7 @@ const ManageBook = () => {
     try {
       const response = await axios.get('http://localhost:5000/api/books');
       setBooks(response.data);
+      setShowBooks(true); // Show the list after fetching books
     } catch (error) {
       console.error("Error fetching books:", error);
     }
@@ -37,6 +39,7 @@ const ManageBook = () => {
     try {
       const response = await axios.get(`http://localhost:5000/api/books/${searchId}`);
       setBooks([response.data]); // Set to an array for consistent rendering
+      setShowBooks(true);
     } catch (error) {
       console.error("Error searching book:", error);
     }
@@ -229,16 +232,18 @@ const ManageBook = () => {
 
       {/* Display the list of books */}
       <div>
-        {books.length === 0 ? (
+        {showBooks && books.length === 0 ? (
           <p>No books available</p>
         ) : (
-          <ul>
-            {books.map((book) => (
-              <li key={book._id}>
-                {book.title} - {book.author} - {book.isbn} - {book.category} - {book.publishedDate} - {book.status} - {book.location}
-              </li>
-            ))}
-          </ul>
+          showBooks && (
+            <ul>
+              {books.map((book) => (
+                <li key={book._id}>
+                  ID: {book._id} - Title: {book.title} - Author: {book.author} - ISBN: {book.isbn} - Category: {book.category} - Published Date: {book.publishedDate} - Status: {book.status} - Location: {book.location}
+                </li>
+              ))}
+            </ul>
+          )
         )}
       </div>
     </div>
@@ -246,9 +251,3 @@ const ManageBook = () => {
 };
 
 export default ManageBook;
-
-
-
-
-
-

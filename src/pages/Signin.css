@@ -1,0 +1,57 @@
+/* Signin.css */
+
+/* Container for the sign-in page */
+.signin-container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  /* Form styling */
+  .signin-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  /* Input fields */
+  .signin-input {
+    padding: 8px;
+    margin-bottom: 10px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Button styling */
+  .signin-button {
+    padding: 10px 20px;
+    background-color: #ffb6c1; /* Light pink color */
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  /* Hover effect on button */
+  .signin-button:hover {
+    background-color: #ff99b3; /* Slightly darker pink */
+  }
+  
+  /* Error message styling */
+  .error-message {
+    color: red;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  /* Welcome message after successful login */
+  .signin-container h3 {
+    color: #4CAF50; /* Green color for success message */
+  }
+  
+  .signin-container p {
+    color: #000;
+    font-size: 18px;
+  }
+  
