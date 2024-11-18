@@ -43,7 +43,7 @@ const Signin = () => {
   };
 
   const handleProfileClick = () => {
-    navigate('/profile');
+    navigate('/profile', { state: { username, password } });
   };
 
   const handleSignOut = () => {

@@ -9,6 +9,7 @@ import Signin from './pages/Signin';
 import Signup from './pages/Signup';
 import ManageBook from './pages/ManageBook';
 import logo from './pages/logo.png';
+import Profile from './pages/Profile';
 
 const App = () => {
   return (
@@ -33,6 +34,7 @@ const App = () => {
           <Route path="/signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/managebook" element={<ManageBook />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </div>
     </Router>
