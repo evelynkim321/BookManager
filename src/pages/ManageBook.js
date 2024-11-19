@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+import './ManageBook.css';
+
 const ManageBook = () => {
   // State variables for managing form data and book data
   const [books, setBooks] = useState([]);
@@ -250,22 +252,22 @@ const ManageBook = () => {
       {/* List of books (only shows when Show All Books button is clicked) */}
       {books.length > 0 && (
         <div>
-          <h3>Books List</h3>
-          <ul>
-            {books.map((book) => (
-              <li key={book._id}>
-                <p><strong>Book ID:</strong> {book._id}</p>
-                <p><strong>Title:</strong> {book.title}</p>
-                <p><strong>Author:</strong> {book.author}</p>
-                <p><strong>ISBN:</strong> {book.isbn}</p>
-                <p><strong>Category:</strong> {book.category}</p>
-                <p><strong>Published Date:</strong> {book.publishedDate}</p>
-                <p><strong>Status:</strong> {book.status}</p>
-                <p><strong>Location:</strong> {book.location}</p>
-              </li>
-            ))}
-          </ul>
+        <h3>Books List</h3>
+        <div className="book-list-container">
+          {books.map((book) => (
+            <div className="book-card" key={book._id}>
+              <p><strong>Book ID:</strong> {book._id}</p>
+              <p><strong>Title:</strong> {book.title}</p>
+              <p><strong>Author:</strong> {book.author}</p>
+              <p><strong>ISBN:</strong> {book.isbn}</p>
+              <p><strong>Category:</strong> {book.category}</p>
+              <p><strong>Published Date:</strong> {book.publishedDate}</p>
+              <p><strong>Status:</strong> {book.status}</p>
+              <p><strong>Location:</strong> {book.location}</p>
+            </div>
+          ))}
         </div>
+      </div>
       )}
     </div>
   );
